@@ -1,6 +1,106 @@
-#include "givenclasses.h"
-#include <math.h>
+//
+//  givenclasses.h
+//  week01-shape-inventory
+//
+//  Created by John Augustine on 04/08/2024.
+//
+#include <string>
 #include <iostream>
+using namespace std;
+#ifndef givenclasses_h
+#define givenclasses_h
+
+class Polygon
+{ // this is an abstract class. Why?
+private:
+    string name;
+
+public:
+    Polygon(string name);
+    virtual ~Polygon() {}
+    string getName();
+    virtual double getArea() = 0; // pure virtual function
+    virtual double getCircumference() = 0;
+    virtual void print() = 0;
+    bool isBiggerByArea(Polygon &p);
+    bool isBiggerByCircumference(Polygon &p);
+};
+
+class RightTriangle : public Polygon
+{
+protected:
+    double base;
+    double height;
+
+public:
+    RightTriangle(string name, double base, double height);
+    ~RightTriangle() {}
+    double getArea();
+    double getCircumference();
+    void print();
+};
+
+class Rectangle : public Polygon
+{
+protected:
+    double base;
+    double height;
+
+public:
+    Rectangle(string name, double base, double height);
+    ~Rectangle() {}
+    double getArea();
+    double getCircumference();
+    void print();
+};
+
+class Square : public Rectangle
+{
+public:
+    Square(string name, double side);
+    ~Square() {}
+    void print();
+};
+
+class Node
+{
+private:
+    Polygon *p;
+    Node *next;
+
+public:
+    Node(Polygon *p)
+    {
+        this->p = p;
+        next = NULL;
+    }
+    Node *getNext() { return next; }
+    Polygon *getPolygonPtr() { return p; }
+    void setNext(Node *nxt) { next = nxt; }
+    void updatePointer(Node *nxt) { next = nxt; }
+};
+
+class LinkedList
+{
+private:
+    Node *head;
+
+public:
+    LinkedList() { head = NULL; }
+    bool addNode(Polygon *p); // Must be an O(1) time operation
+    bool deleteNode(string nme);
+    void print();
+    double getTotalArea();
+    double getTotalCircumference();
+};
+
+#endif /* givenclasses_h */
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 //----------------polygon--------------------
@@ -28,17 +128,19 @@ RightTriangle ::RightTriangle(string name, double base, double height) : Polygon
 
 double RightTriangle ::getArea()
 {
-    return 0.5 * base * height;
+    double area = 0.5 * base * height;
+    return round(area * 100.0) / 100;
 }
 
 double RightTriangle::getCircumference()
 {
-    return sqrt(base * base + height * height) + base + height;
+    double c = sqrt(base * base + height * height) + base + height;
+    return round(c * 100.0) / 100;
 }
 
 void RightTriangle::print()
 {
-    cout << "right-triangle " << this->getName() << " " << base << " " << height << endl;
+    printf("right-triangle %s %.2f %.2f\n", this->getName().c_str(), base, height);
 }
 
 //----------------rectangle--------------------
@@ -47,17 +149,19 @@ Rectangle::Rectangle(string name, double base, double height) : Polygon(name), b
 
 double Rectangle ::getArea()
 {
-    return base * height;
+    double area = base * height;
+    return round(area * 100.0) / 100;
 }
 
 double Rectangle::getCircumference()
 {
-    return 2 * (base + height);
+    double c = 2 * (base + height);
+    return round(c * 100.0) / 100;
 }
 
 void Rectangle::print()
 {
-    cout << "rectangle " << this->getName() << " " << base << " " << height << endl;
+    printf("rectangle %s %.2f %.2f\n", this->getName().c_str(), base, height);
 }
 
 //----------------square--------------------
@@ -66,7 +170,7 @@ Square ::Square(string name, double side) : Rectangle(name, side, side) {};
 
 void Square::print()
 {
-    cout << "square " << this->getName() << " " << base << endl;
+    printf("square %s %.2f\n", this->getName().c_str(), base);
 }
 
 //----------------LinkedList--------------------
@@ -132,7 +236,7 @@ double LinkedList::getTotalArea()
         sum += itr->getPolygonPtr()->getArea();
         itr = itr->getNext();
     }
-    return sum;
+    return round(sum * 100.0) / 100;
 }
 
 double LinkedList::getTotalCircumference()
@@ -144,7 +248,7 @@ double LinkedList::getTotalCircumference()
         sum += itr->getPolygonPtr()->getCircumference();
         itr = itr->getNext();
     }
-    return sum;
+    return round(sum * 100.0) / 100;
 }
 
 //----------------main--------------------
@@ -199,11 +303,11 @@ int main()
             cin >> printWhat;
             if (printWhat == "circumference")
             {
-                cout << inv.getTotalCircumference() << " ";
+                printf("%.2f\n", inv.getTotalCircumference());
             }
             if (printWhat == "area")
             {
-                cout << inv.getTotalArea() << " ";
+                printf("%.2f\n", inv.getTotalArea());
             }
         }
         if (inp == "print-all")
@@ -213,3 +317,5 @@ int main()
     }
     return 0;
 }
+
+/* end of your program */
