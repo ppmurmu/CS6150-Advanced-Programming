@@ -128,14 +128,12 @@ RightTriangle ::RightTriangle(string name, double base, double height) : Polygon
 
 double RightTriangle ::getArea()
 {
-    double area = 0.5 * base * height;
-    return round(area * 100.0) / 100;
+    return 0.5 * base * height;
 }
 
 double RightTriangle::getCircumference()
 {
-    double c = sqrt(base * base + height * height) + base + height;
-    return round(c * 100.0) / 100;
+    return sqrt(base * base + height * height) + base + height;
 }
 
 void RightTriangle::print()
@@ -149,14 +147,12 @@ Rectangle::Rectangle(string name, double base, double height) : Polygon(name), b
 
 double Rectangle ::getArea()
 {
-    double area = base * height;
-    return round(area * 100.0) / 100;
+    return base * height;
 }
 
 double Rectangle::getCircumference()
 {
-    double c = 2 * (base + height);
-    return round(c * 100.0) / 100;
+    return 2.0 * (base + height);
 }
 
 void Rectangle::print()
