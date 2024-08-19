@@ -207,6 +207,7 @@ bool LinkedList::deleteNode(string nme)
             free(temp);
             return true;
         }
+        n = n->getNext();
     }
 
     return false;
@@ -251,11 +252,13 @@ double LinkedList::getTotalCircumference()
 
 int main()
 {
+
     LinkedList inv;
     string inp = "";
     while (inp != "done")
     {
         cin >> inp;
+
         if (inp == "add")
         {
             string type;
@@ -311,6 +314,7 @@ int main()
             inv.print();
         }
     }
+
     return 0;
 }
 
