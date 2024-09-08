@@ -1,65 +1,69 @@
 #include <cmath>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+
 using namespace std;
 
-void print(double d){
+void print(double d)
+{
     cout << fixed << setprecision(5) << d << endl;
-      return;
+    return;
 }
 
 /******* Do Not Edit Above This Line. No other headers allowed. *********/
 
-string name[1000];
-string animal[1000];
-int weight[1000];
+string animal[50000];
+int weight[50000];
 
-//fn to calculate mean
+// fn to calculate mean
 double findMean(string anim)
 {
-    int i=0;
-    int sum=0,c=0;
-    while(animal[i]!="done")
+    int i = 0;
+    int sum = 0, c = 0;
+    while (animal[i] != "done")
     {
-        if(animal[i]==anim)
+        if (animal[i] == anim)
         {
-            sum+=weight[i];
+            sum += weight[i];
             c++;
         }
         i++;
     }
-    double mean=sum*1.0 / c;
+    double mean = sum / c;
     return mean;
 }
 
-
-//fn to calculate standard deviation
+// fn to calculate standard deviation
 double findSD(string anim)
 {
-    double mean=findMean(anim);
-    int i=0;
-    int sum=0;
-    while(animal[i]!="done")
+    double mean = findMean(anim);
+    int i = 0;
+    int sum = 0;
+    int c = 0;
+    while (animal[i] != "done")
     {
-        if(animal[i]==anim)
+        if (animal[i] == anim)
         {
-            sum+=sqrt(pow(weight[i] - mean, 2));
+            sum += (pow(weight[i] - mean, 2));
+            c++;
         }
+
         i++;
     }
 
-    return sum;
+    return sqrt(sum / c);
 }
 
 double findMode(string anim)
 {
     int temp[1000];
-    int i=0,j=0;
-    while(animal[i]!="done")
+    int i = 0, j = 0;
+    while (animal[i] != "done")
     {
-        if(animal[i]==anim)
+        if (animal[i] == anim)
         {
-            temp[j]= weight[i];
+            temp[j] = weight[i];
             j++;
         }
         i++;
@@ -68,112 +72,104 @@ double findMode(string anim)
     // {
     //     cout << temp[i];
     // }
-    //sort the temp
-    for(int k=0; k< j ;k++)
+    // sort the temp
+    for (int k = 0; k < j - 1; k++)
     {
-        for(int l=0; l<j-1;l++)
+        for (int l = 0; l < j - k - 1; l++)
         {
-            if(temp[l]> temp[l+1])
+            if (temp[l] > temp[l + 1])
             {
-                int t=temp[l];
-                temp[l]=temp[l+1];
-                temp[l+1]=t;
+                int t = temp[l];
+                temp[l] = temp[l + 1];
+                temp[l + 1] = t;
             }
         }
     }
-    
-    
-    
-    int mode=0, c=1, maxi=0;
-    for(int k=0; k < j-1 ;k++)
+
+    int mode = 0, c = 1, maxi = 0;
+    for (int k = 0; k < j - 1; k++)
     {
-        if(temp[k+1]==temp[k])
+        if (temp[k + 1] == temp[k])
         {
             c++;
         }
         else
         {
-            if(c>maxi)
+            if (c > maxi)
             {
-                maxi=c;
-                mode=temp[k];
-                c=1;
+                maxi = c;
+                mode = temp[k];
+                c = 1;
             }
-            
         }
-        
     }
     return mode;
-    
 }
 
 double findMedian(string anim)
 {
     int temp[1000];
-    int i=0,j=0;
-    while(animal[i]!="done")
+    int i = 0, j = 0;
+    while (animal[i] != "done")
     {
-        if(animal[i]==anim)
+        if (animal[i] == anim)
         {
-            temp[j]= weight[i];
+            temp[j] = weight[i];
             j++;
         }
         i++;
     }
-    //sort the temp
-    for(int k=0; k< j ;k++)
+    // sort the temp
+    for (int k = 0; k < j - 1; k++)
     {
-        for(int l=0; l<j-1; l++)
+        for (int l = 0; l < j - k - 1; l++)
         {
-            if(temp[l]> temp[l+1])
+            if (temp[l] > temp[l + 1])
             {
-                int t=temp[l];
-                temp[l]=temp[l+1];
-                temp[l+1]=t;
+                int t = temp[l];
+                temp[l] = temp[l + 1];
+                temp[l + 1] = t;
             }
         }
     }
-    
-    if(j%2==1)
+
+    if (j % 2 == 1)
     {
-        return temp[j/2];
-        
+        return temp[j / 2];
     }
     else
     {
-     return (temp[(j/2)-1] + temp[j/2])/2;
+        return (temp[(j / 2) - 1] + temp[j / 2]) / 2;
     }
-    
-    
 }
 
 double findFact(int n)
 {
-    int p=1;
-    for(int i=n; i>=1;i--)
+    int p = 1;
+    for (int i = n; i >= 1; i--)
     {
-        p*=i;
+        p *= i;
     }
     return p;
 }
 
-double findProb(int n, int p, int c)
+double findProb(int n, double p, int c)
 {
-    double t1= findFact(n) / (findFact(c) * findFact(n-c));
-    double t2= pow(p, c);
-    double t3= pow(1-p, n-c);
-    return t1*t2*t3;
-    
+
+    double t1 = findFact(n) / (findFact(c) * findFact(n - c));
+    double t2 = pow(p, c);
+    double t3 = pow(1 - p, n - c);
+    return t1 * t2 * t3;
 }
 
 double findFinalProb(string anim, double val, double p)
 {
-    int i=0,c=0, n=0;
-    while(animal[i]!="done")
+    int i = 0, c = 0, n = 0;
+    while (animal[i] != "done")
     {
-        if(animal[i]==anim)
+        if (animal[i] == anim)
         {
-            if(weight[i] < val)
+            if (weight[i] < val)
             {
                 c++;
             }
@@ -181,84 +177,78 @@ double findFinalProb(string anim, double val, double p)
         }
         i++;
     }
-    
-    
-    
+
     return findProb(n, p, c);
-    
 }
 
+int main()
+{
+    /* Enter your code here. Read input using inputFile. Print output using the print function above. */
+    ifstream inputFile("test.txt");
+    if (!inputFile.is_open())
+    {
+        cerr << "Error opening file" << endl;
+        return 1;
+    }
 
-int main() {
-    /* Enter your code here. Read input using cin. Print output using the print function above. */ 
-    int i=0;
-    string inp="";
-    cin >> inp;
-    while(inp!="done")
+    int i = 0;
+    string inp = "";
+    inputFile >> inp;
+    while (inp != "done")
     {
-        string a=inp;
+        string a = inp;
         string n;
-        cin >> n;
+        inputFile >> n;
         int w;
-        cin >>w;
-        animal[i]= a;
-        name[i]=n;
-        weight[i]=w;
+        inputFile >> w;
+        animal[i] = a;
+        weight[i] = w;
         i++;
-        cin >> inp;
+        inputFile >> inp;
     }
-    animal[i]="done";
-    name[i]= "done";
-    weight[i]= 0;
-    
+    animal[i] = "done";
+    weight[i] = 0;
+
     string cmd;
-    cin >> cmd;
-    if(cmd == "mean")
+    inputFile >> cmd;
+    if (cmd == "mean")
     {
         string a;
-        cin >> a;
-        cout << fixed << setprecision(5) <<  findMean(a); 
+        inputFile >> a;
+        cout << fixed << setprecision(5) << findMean(a);
     }
-    if( cmd == "mode")
-    {
-         string a;
-        cin >> a;
-        
-       cout <<  findMode(a); 
-        
-    }
-    if(cmd == "stddev")
+    if (cmd == "mode")
     {
         string a;
-        cin >> a;
-        cout << fixed << setprecision(5) <<  findSD(a); 
-        
+        inputFile >> a;
+
+        cout << findMode(a);
     }
-    if(cmd == "median")
+    if (cmd == "stddev")
     {
         string a;
-        cin >> a;
-        cout << fixed << setprecision(5) <<  findMedian(a); 
+        inputFile >> a;
+        cout << fixed << setprecision(5) << findSD(a);
     }
-    
-    if(cmd == "probability")
+    if (cmd == "median")
     {
         string a;
-        cin>>a;
+        inputFile >> a;
+        cout << fixed << setprecision(5) << findMedian(a);
+    }
+
+    if (cmd == "probability")
+    {
+        string a;
+        inputFile >> a;
         int val;
-        cin>>val;
+        inputFile >> val;
         double p;
-        cin >> p;
-        cout << fixed << setprecision(5) << findFinalProb(a, val, p); 
-        
-        
+        inputFile >> p;
+        cout << findFinalProb(a, val, p);
     }
-    
-    
-   
-     
-    
+    inputFile.close();
     return 0;
 }
 
-//undefined
+// undefined

@@ -1,0 +1,12 @@
+bird xyz 3
+monkey xyz 2
+snake xyz 3
+snake xyz 4
+lion xyz 1
+tiger xyz 2
+lion xyz 2
+monkey xyz 5
+snake xyz 2
+tiger xyz 4
+done
+mean snake
