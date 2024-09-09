@@ -119,12 +119,78 @@ public:
     }
 };
 
+class Node
+{
+public:
+    int val;
+    Node *next;
+    Node(int val)
+    {
+        this->val = val;
+        next = NULL;
+    }
+    void setNext(Node *n)
+    {
+        next = n;
+    }
+};
+class LinkedList
+{
+public:
+    Node *head;
+    void addNode(int val)
+    {
+        Node *n = new Node(10);
+        if (head == NULL)
+        {
+            head = n;
+        }
+        else
+        {
+            head->setNext(n);
+        }
+    }
+    void print()
+    {
+        Node *t = head;
+        while (t != NULL)
+        {
+            cout << t->val << " ";
+            t = t->next;
+        }
+        cout << endl;
+    }
+};
+
+class StackLL
+{
+    LinkedList stack;
+    Node *top;
+    StackLL()
+    {
+        stack = LinkedList();
+        top = NULL;
+    }
+    void push(int n)
+    {
+        if (top == NULL)
+        {
+            top = new Node(n);
+            stack.addNode(n);
+        }
+        else
+        {
+            top->setNext(n);
+            stack.addNode(n);
+        }
+    }
+};
+
 int main()
 {
-    Stack s = Stack(10);
-    s.push(10);
-    s.push(20);
-    s.print();
-    cout << s.pop() << endl;
-    s.print();
+    LinkedList l = LinkedList();
+
+    l.addNode(10);
+    l.addNode(10);
+    l.print();
 }
