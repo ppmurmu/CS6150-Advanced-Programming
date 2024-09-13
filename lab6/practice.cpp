@@ -173,6 +173,7 @@ class StackLL
     }
     void push(int n)
     {
+        Node *temp = new Node(n);
         if (top == NULL)
         {
             top = new Node(n);
@@ -180,7 +181,7 @@ class StackLL
         }
         else
         {
-            top->setNext(n);
+            top->setNext(temp);
             stack.addNode(n);
         }
     }
@@ -193,4 +194,5 @@ int main()
     l.addNode(10);
     l.addNode(10);
     l.print();
+    return 0;
 }
