@@ -1,0 +1,404 @@
+LRU
+2600
+print
+put 5798 4891
+put 7622 97514
+print
+get 9431
+print
+put 3136 1790
+print
+put 345 93288
+put 7976 19014
+put 3503 14178
+get 9431
+print
+put 4645 68001
+print
+get 4645
+get 2967
+put 3686 54416
+get 9690
+put 6098 54580
+print
+print
+get 4591
+put 5119 83805
+get 3827
+get 3136
+print
+print
+print
+print
+print
+print
+put 7275 86653
+put 4699 67645
+get 9176
+get 9690
+put 2065 98342
+get 7622
+print
+print
+put 7160 18690
+print
+get 520
+print
+print
+print
+print
+print
+put 4092 34826
+get 9176
+print
+put 2625 68629
+get 3682
+get 4092
+put 4379 38730
+get 3682
+get 7614
+print
+get 6937
+print
+print
+get 4645
+print
+get 2065
+put 9958 74840
+put 2997 96007
+get 5394
+put 476 77663
+get 7176
+get 7614
+get 5120
+print
+put 7410 5409
+put 3727 63231
+put 3970 94610
+print
+print
+print
+put 7189 40986
+put 3781 67804
+get 7378
+put 4087 28644
+get 4124
+get 2625
+print
+print
+put 1896 29544
+get 4087
+print
+put 9997 8483
+get 387
+put 6279 68333
+get 6472
+print
+put 4526 37520
+get 520
+put 8344 87771
+put 6860 98783
+print
+put 8568 58359
+get 7505
+put 8992 25979
+print
+put 3341 47344
+print
+get 2997
+print
+print
+print
+print
+print
+print
+print
+print
+print
+put 1176 50452
+put 2383 92030
+put 7857 80256
+get 4185
+print
+put 2965 45120
+put 2544 61133
+get 1951
+get 8992
+get 145
+print
+get 1087
+put 5948 24830
+print
+put 6494 42815
+put 1339 92149
+print
+print
+put 3404 47405
+get 423
+put 6023 48724
+put 6895 27763
+get 4124
+put 5999 89625
+get 4699
+print
+put 5231 5316
+print
+put 3494 57221
+get 2619
+put 6976 15248
+put 1618 3211
+print
+get 3550
+put 9520 21488
+print
+get 5119
+print
+print
+print
+put 6205 56435
+print
+print
+get 9781
+put 5168 21263
+get 9489
+put 4505 90417
+print
+put 3908 9370
+get 3908
+put 7415 19863
+put 6272 96873
+put 5248 38780
+put 955 61701
+get 8568
+get 9427
+put 5445 92784
+get 8776
+get 1339
+print
+put 8070 64795
+print
+get 3781
+put 8674 9205
+get 955
+put 7848 31401
+put 2747 4467
+put 5422 45837
+put 7306 35731
+print
+get 7857
+get 4543
+put 4929 33510
+get 9134
+put 296 56825
+get 8143
+put 747 29122
+put 8381 63182
+print
+put 3959 93001
+get 8568
+print
+get 5120
+put 6147 80627
+print
+put 8397 68633
+get 7306
+print
+get 2383
+print
+get 3404
+put 569 47370
+get 3908
+get 6787
+print
+print
+print
+get 5586
+print
+put 5399 40953
+print
+put 8436 61598
+get 4591
+print
+put 1946 71532
+print
+get 9997
+get 9280
+put 3188 40722
+get 6926
+print
+put 2617 58182
+get 2965
+print
+put 9362 34007
+put 9793 22072
+put 3955 10392
+put 1105 26724
+print
+get 3972
+print
+print
+put 7449 87494
+get 7031
+put 4916 5030
+get 9155
+get 4929
+print
+put 7558 46113
+put 8955 74777
+get 2617
+print
+get 4929
+print
+get 2967
+put 7397 85366
+get 1946
+put 1474 40567
+print
+print
+print
+print
+get 8381
+get 110
+get 8568
+get 7571
+print
+print
+get 3959
+get 51
+get 145
+get 1923
+get 3494
+get 9079
+print
+print
+get 4379
+print
+put 2697 67201
+get 3690
+get 4526
+put 1547 83315
+print
+get 1967
+put 3663 30440
+get 6391
+put 4740 37557
+print
+put 1624 13155
+print
+put 3179 63629
+put 861 4508
+put 3451 36738
+put 2369 34296
+get 3781
+get 3304
+put 7371 15029
+print
+print
+get 3445
+get 8674
+get 833
+get 3663
+get 8738
+print
+get 7538
+put 486 86596
+get 2862
+put 1721 13266
+get 1132
+get 51
+put 1944 55365
+print
+print
+put 4636 97738
+get 9735
+print
+put 1532 2523
+put 2592 42524
+print
+get 8143
+print
+put 1792 18190
+print
+get 4591
+print
+get 8992
+get 4536
+print
+print
+put 153 3175
+print
+print
+get 3675
+get 3445
+put 7252 56474
+print
+get 1582
+get 9793
+print
+get 4185
+put 6738 92379
+print
+get 7678
+get 861
+print
+get 8992
+print
+print
+print
+put 5066 89459
+get 7076
+get 1618
+put 2982 28463
+get 9793
+put 9181 13199
+put 7564 6118
+get 4620
+get 3686
+print
+put 4333 6174
+put 4225 24290
+put 7078 23938
+print
+put 7241 82333
+put 9194 34343
+get 3781
+get 2680
+print
+get 7870
+print
+print
+print
+print
+get 3304
+get 6440
+put 1475 57843
+get 3352
+print
+get 2407
+put 6093 27522
+put 8937 97108
+put 6833 87524
+print
+put 7163 89835
+print
+get 4636
+put 6338 4235
+put 3151 67305
+get 8023
+put 8246 42827
+put 6048 99952
+put 7991 24185
+print
+print
+put 711 67782
+put 5083 9773
+get 3169
+put 1225 67695
+put 476 85378
+put 4783 20327
+print
+get 1474
+put 5299 35167
+print
+print
+done

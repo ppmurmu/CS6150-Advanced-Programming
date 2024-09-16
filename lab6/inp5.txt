@@ -1,0 +1,195 @@
+LIFO
+2252
+print
+get 2396
+get 9526
+put 368 18163
+put 45 2045
+get 368
+print
+put 9307 43174
+get 1213
+print
+put 9719 92931
+print
+print
+put 8349 32303
+get 1332
+put 3801 34099
+put 4220 69392
+get 45
+put 505 40389
+get 4220
+print
+print
+print
+print
+get 9392
+print
+put 768 74310
+get 9307
+put 3317 48209
+get 3801
+put 3075 79474
+print
+put 9232 81625
+put 6094 26003
+put 3387 33240
+put 8375 59020
+put 9044 6957
+put 2655 58744
+print
+put 3024 64718
+put 3480 43646
+get 45
+put 2714 21895
+put 7770 55313
+print
+print
+print
+put 8529 69609
+get 8967
+get 8375
+print
+print
+put 9622 99800
+put 9946 43507
+print
+print
+print
+put 9105 13684
+get 571
+get 7770
+put 2872 55250
+get 45
+put 351 7300
+print
+put 2494 93131
+print
+print
+print
+print
+put 8485 97502
+get 959
+put 6008 61128
+get 7778
+put 6975 94072
+put 5995 82386
+get 8485
+print
+put 2033 62952
+put 8003 78070
+print
+get 7655
+get 5995
+get 3820
+get 3801
+put 4979 81592
+print
+put 3726 79403
+get 9622
+get 5925
+get 9307
+get 5220
+put 6635 98481
+print
+put 1754 44297
+put 7391 73293
+print
+get 1683
+put 1583 79952
+put 200 26333
+put 4081 5332
+put 7850 49255
+get 1332
+print
+get 9392
+print
+print
+get 2039
+get 9526
+get 4778
+get 7655
+print
+put 4449 71731
+get 4291
+put 756 72687
+get 4577
+put 1529 77634
+put 7210 91558
+put 7261 40412
+get 7166
+print
+put 267 58480
+put 8055 59619
+put 9726 70142
+get 9726
+print
+get 8485
+put 2852 22373
+print
+print
+put 5669 83546
+get 5889
+print
+put 2800 81553
+print
+get 7814
+print
+print
+put 368 82723
+print
+print
+print
+put 237 66790
+get 1964
+put 9656 52673
+get 7343
+put 7462 51412
+put 8106 36077
+put 8805 67337
+get 9982
+print
+print
+put 277 2506
+put 5072 6515
+print
+get 6738
+put 1224 14486
+get 1545
+put 3616 67650
+get 3591
+get 3726
+get 3521
+print
+print
+get 4449
+get 4981
+put 8784 32085
+get 5142
+print
+print
+print
+get 7934
+put 6478 7543
+put 5318 37048
+get 4778
+get 6477
+get 2872
+print
+print
+print
+print
+get 9421
+print
+print
+get 2800
+put 9755 35753
+put 5356 48463
+get 4279
+put 6104 20279
+print
+get 5889
+put 9382 46590
+print
+done
