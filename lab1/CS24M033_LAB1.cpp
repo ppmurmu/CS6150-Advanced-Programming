@@ -105,7 +105,11 @@ using namespace std;
 
 //----------------polygon--------------------
 
-Polygon::Polygon(string name) : name(name) {};
+// Polygon::Polygon(string name) : name(name) {};
+Polygon::Polygon(string name)
+{
+    this->name = name;
+}
 
 string Polygon::getName()
 {
