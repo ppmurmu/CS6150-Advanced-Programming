@@ -68,6 +68,30 @@ public:
         }
         cout << endl;
     }
+    void deleteNode(int val)
+    {
+        Node *curr = head;
+        Node *temp = NULL;
+        while (curr != NULL)
+        {
+            if (temp == NULL && curr->val == val)
+            {
+                // head is the val to delete
+                head = curr->right;
+                head->setLeft(NULL);
+            }
+            if (curr->val == val)
+            {
+                if (curr->right != NULL)
+                {
+                    temp->setRight(curr->right);
+                }
+                curr->setRight(NULL);
+            }
+            temp = curr;
+            curr = curr->left;
+        }
+    }
 };
 
 int main()
