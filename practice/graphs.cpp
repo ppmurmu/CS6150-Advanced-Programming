@@ -4,14 +4,20 @@ using namespace std;
 class Graph
 {
 public:
-    int *ar;
-    int **matrix;
-    Graph(int size)
+    int vertex;
+    int **adj;
+    Graph(int v)
     {
-        ar = new int[size];
-        for (int i = 0; i < size; i++)
+        adj = new int *[v];
+        vertex = v;
+        for (int i = 0; i < v; i++)
         {
-            matrix[i] = new int[size];
+            adj[i] = new int[v];
+            // Initialize all values to 0 (no edges)
+            for (int j = 0; j < v; j++)
+            {
+                adj[i][j] = 0;
+            }
         }
     }
     void display()
@@ -20,7 +26,7 @@ public:
         {
             for (int j = 0; j < 5; j++)
             {
-                cout << matrix[i][j] << " ";
+                cout << adj[i][j] << " ";
             }
             cout << endl;
         }
@@ -29,10 +35,7 @@ public:
 int main()
 {
     Graph g = Graph(5);
-    for (int i = 0; i < 5; i++)
-    {
-        g.matrix[i][i] = 1;
-    }
+
     g.display();
     return 0;
 }
