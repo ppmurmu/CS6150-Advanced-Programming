@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stack>
+
 using namespace std;
 
 class Graph
@@ -20,22 +22,51 @@ public:
             }
         }
     }
-    void display()
+
+    void addEdge(int i, int j)
     {
-        for (int i = 0; i < 5; i++)
+        adj[i][j] = 1;
+        adj[j][i] = 1;
+    }
+
+    void dfs(int s)
+    {
+        bool vis[vertex];
+
+        for (int i = 0; i < vertex; i++)
         {
-            for (int j = 0; j < 5; j++)
+            vis[i] = false;
+        }
+
+        stack<int> st;
+
+        st.push(s);
+        vis[s] = true;
+        while (!st.empty())
+        {
+            int curr = st.top();
+            cout << curr << " ";
+            st.pop();
+
+            for (int i = 0; i < vertex; i++)
             {
-                cout << adj[i][j] << " ";
+                if (!vis[i] && adj[curr][i])
+                {
+                    st.push(i);
+                    vis[i] = true;
+                }
             }
-            cout << endl;
         }
     }
 };
 int main()
 {
     Graph g = Graph(5);
-
-    g.display();
+    g.addEdge(1, 0);
+    g.addEdge(2, 1);
+    g.addEdge(3, 4);
+    g.addEdge(4, 0);
+    g.dfs(2);
+    // g.display();
     return 0;
 }
