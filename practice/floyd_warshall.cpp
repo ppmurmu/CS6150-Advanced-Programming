@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include <climits>
 using namespace std;
 int graph[4][4] = {{0, 3, INT_MAX, 7},
                    {8, 0, 2, INT_MAX},
@@ -15,7 +16,8 @@ void fw()
         {
             for (int j = 0; j < 4; j++)
             {
-                graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j]);
+                if (graph[i][k] != INT_MAX && graph[k][j] != INT_MAX)
+                    graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j]);
             }
         }
     }
