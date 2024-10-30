@@ -9,7 +9,6 @@ int graph[4][4] = {{0, 3, INT_MAX, 7},
 
 void fw()
 {
-
     for (int k = 0; k < 4; k++)
     {
         for (int i = 0; i < 4; i++)
@@ -23,17 +22,6 @@ void fw()
     }
 }
 
-void printGraph()
-{
-    for (int i = 0; i < 4; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            cout << graph[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
 int main()
 {
 
