@@ -38,6 +38,39 @@ void dijkstra(vector<vector<int>> &adjMatrix)
     }
 }
 
+void dijk(vector<vector<int>> adj)
+{
+    int n = adj.size();
+    // distance, node
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+    vector<int> dist(n, INT_MAX);
+    int total = 0;
+    pq.push({0, 0});
+
+    dist[0] = 0;
+
+    while (!pq.empty())
+    {
+        int node = pq.top().second;
+        int d = pq.top().first;
+        pq.pop();
+        for (int i = 0; i < n; i++)
+        {
+
+            if (adj[node][i] > 0 && adj[node][i] + d < dist[i])
+            {
+                dist[i] = adj[node][i] + d;
+                pq.push({dist[i], i});
+            }
+        }
+    }
+    for (int i = 1; i < n; i++)
+    {
+        cout << i << " " << dist[i] << endl;
+    }
+}
+
 int main()
 {
     vector<vector<int>> adjMatrix(5, std::vector<int>(5, 0));
@@ -53,7 +86,8 @@ int main()
     adjMatrix[4][2] = 8;
     adjMatrix[4][3] = 2;
 
-        dijkstra(adjMatrix);
+    dijk(adjMatrix);
+    dijkstra(adjMatrix);
 
     return 0;
 }
