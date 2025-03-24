@@ -25,8 +25,8 @@ void fw()
 int main()
 {
 
-    printGraph();
+    // printGraph();
     fw();
-    printGraph();
+    // printGraph();
     return 0;
 }
